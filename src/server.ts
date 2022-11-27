@@ -1,5 +1,6 @@
 import express from "express";
 import apiRouter from "./router/apiRouter";
+import userRoutes from "./router/users";
 
 
 const app: express.Application = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 
 // router configuration
 app.use("/api", apiRouter);
+app.use("/users", userRoutes);
 
 app.listen(port, hostname, () => {
   console.log(`App running at http://${hostname}:${port}`);
