@@ -1,7 +1,7 @@
 import express from "express";
+import appLogger from "./middleware/app.logger";
 import apiRouter from "./router/apiRouter";
 import userRoutes from "./router/users";
-
 
 const app: express.Application = express();
 
@@ -10,13 +10,16 @@ const port: number = 5000;
 
 // get request
 // app.get("/", (request: Request, response: Response) => {
-  //   // response.sendFile(); // for html page response
-  //   // response.json(); // for json response
-  //   // response.download(); // for downloadable response
-  //   // response.send(); // for html tag response
-  //   response.status(200).send(`<h3>Welcome to index page</h3>`);
-  // });
-  
+//   // response.sendFile(); // for html page response
+//   // response.json(); // for json response
+//   // response.download(); // for downloadable response
+//   // response.send(); // for html tag response
+//   response.status(200).send(`<h3>Welcome to index page</h3>`);
+// });
+
+// configure middleware
+app.use(appLogger);
+
 app.use(express.json());
 
 // router configuration
