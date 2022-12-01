@@ -9,13 +9,13 @@ const hostname: string = "127.0.0.1";
 const port: number = 5000;
 
 // get request
-// app.get("/", (request: Request, response: Response) => {
-//   // response.sendFile(); // for html page response
-//   // response.json(); // for json response
-//   // response.download(); // for downloadable response
-//   // response.send(); // for html tag response
-//   response.status(200).send(`<h3>Welcome to index page</h3>`);
-// });
+app.get("/", (request: express.Request, response: express.Response) => {
+  // response.sendFile(); // for html page response
+  // response.json(); // for json response
+  // response.download(); // for downloadable response
+  // response.send(); // for html tag response
+  response.status(200).send(`<h2>Welcome to index page</h2><a href="/users">Users</a><br><a href="/api">Api page</a>`);
+});
 
 // configure middleware
 app.use(appLogger);

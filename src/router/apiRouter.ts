@@ -5,7 +5,7 @@ const apiRouter: express.Router = express.Router();
 // logic
 apiRouter.get("/", (req: express.Request, res: express.Response) => {
   res.status(200).send(`
-  <h2>Welcome to api router</h2> `);
+  <h2>Welcome to api router</h2> <a href="/">Home</a>`);
 });
 
 
