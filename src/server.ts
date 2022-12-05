@@ -2,6 +2,9 @@ import express from "express";
 import appLogger from "./middleware/app.logger";
 import apiRouter from "./router/apiRouter";
 import userRoutes from "./router/users";
+import assetRoutes from "./router/assets";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app: express.Application = express();
 
@@ -25,6 +28,7 @@ app.use(express.json());
 // router configuration
 app.use("/api", apiRouter);
 app.use("/users", userRoutes);
+app.use("/assets", assetRoutes);
 
 app.listen(port, hostname, () => {
   console.log(`App running at http://${hostname}:${port}`);
